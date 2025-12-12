@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alankrita Sarees | Timeless Weaves</title>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ============================
+       GLOBAL STYLES (WHITE + OLIVE)
+       ============================ -->
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --accent: #4b5d3a;       /* Olive Green */
+      --accent-dark: #35452a;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --radius: 18px;
+      --shadow: 0 14px 40px rgba(15, 23, 42, .10);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* =======================
+       HEADER + NAVBAR
+       ======================= */
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      letter-spacing: .12em;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      margin-left: auto;
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      background: none;
+      border: none;
+      margin-left: auto;
+      cursor: pointer;
+    }
+
+    /* =======================
+       HERO SECTION
+       ======================= */
+    .hero {
+      text-align: center;
+      padding: 90px 20px 60px;
+    }
+
+    .hero-image {
+      max-width: 900px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 38px;
+      margin-top: 20px;
+      color: var(--accent-dark);
+    }
+
+    .hero p {
+      max-width: 500px;
+      margin: 12px auto;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 26px;
+      background: var(--accent);
+      border-radius: 999px;
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+    }
+
+    /* =======================
+       COLLECTION GRID
+       ======================= */
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display";
+      font-size: 30px;
+      margin-bottom: 4px;
+      color: var(--accent-dark);
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 26px;
+      font-size: 14px;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .saree-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .saree-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, .08);
+    }
+
+    .saree-thumb img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .saree-info {
+      padding: 14px;
+    }
+
+    .saree-info h3 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .saree-info .price {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* =======================
+       PRODUCT VIEW PAGE
+       ======================= */
+/* ================= PRODUCT VIEW ================= */
+#productView {
+  display: none;
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+
+.product-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Thumbnail Images */
+.thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.thumbs img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition: 0.2s;
+}
+
+.thumbs img:hover {
+  transform: scale(1.08);
+  border-color: var(--accent);
+}
+
+/* Buy Button */
+.buy-btn {
+  margin-top: 18px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background: var(--accent-dark);
+}
+
+/* =====================================
+   MOBILE RESPONSIVE FIXES
+   ===================================== */
+@media(max-width: 900px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .thumbs img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+    /* =======================
+       RESPONSIVE
+       ======================= */
+    @media(max-width: 900px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        padding: 12px;
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        margin-top: 10px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .product-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================
+       HEADER
+       ======================= -->
+  <header>
+    <div class="nav">
+      <div class="brand">ALANKRITA SAREES</div>
+
+      <button class="menu-toggle">☰</button>
+
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#collectionSection">Collection</a>
+        <a href="#appointment">Appointment</a>
+        <a href="#story">Our Story</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =======================
+       HERO SECTION
+       ======================= -->
+  <section id="home" class="hero">
+    <div class="hero-image">
+      <img src="https://i.ibb.co/yFMTRSJ9/IMG-8664.jpg">
+    </div>
+    <h1>Grace, woven in tradition</h1>
+    <p>Handpicked sarees celebrating timeless craftsmanship.</p>
+    <a class="btn" href="#collectionSection">Explore Collection</a>
+  </section>
+
+  <!-- =======================
+       COLLECTION
+       ======================= -->
+  <section id="collectionSection" class="section">
+    <h2 class="section-title">Our Collection</h2>
+    <p class="section-subtitle">Discover our curated saree edits.</p>
+<!-- PRICE FILTER -->
+<div style="margin-bottom: 20px;">
+  <select id="priceFilter" style="padding:10px;border-radius:12px;border:1px solid var(--border);">
+    <option value="default">Sort by Price</option>
+    <option value="low">Price: Low to High</option>
+    <option value="high">Price: High to Low</option>
+  </select>
+</div>
+
+    <div id="collectionGrid" class="collection-grid"></div>
+  </section>
+
+  <!-- =======================
+       PRODUCT VIEW PAGE
+       ======================= -->
+  <section id="productView">
+    <button class="back-btn" onclick="closeProduct()">← Back to Collection</button>
+
+    <div class="product-layout">
+      <div>
+        <div class="product-image">
+          <img id="mainImage">
+        </div>
+
+        <div class="thumbs" id="thumbContainer"></div>
+      </div>
+
+      <div>
+        <h2 id="pTitle"></h2>
+        <div class="price" id="pPrice"></div>
+
+        <p id="pDesc" style="margin: 12px 0 18px;"></p>
+
+        <h4 style="font-family: Playfair Display; margin-bottom: 6px;">Details</h4>
+        <ul id="pVariants" style="line-height: 1.8;"></ul>
+
+        <button class="buy-btn" id="buyBtn">Buy on WhatsApp</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================
+       APPOINTMENT
+       ======================= -->
+  <section id="appointment" class="section">
+    <h2 class="section-title">Private Appointment</h2>
+    <p class="section-subtitle">A personalised shopping experience.</p>
+
+    <p>Enjoy dedicated consultation, bridal styling, colour matching and drape sessions.</p>
+    
+<a class="btn" style="margin-top: 18px;"
+   href="https://wa.me/918412845177?text=Hi%20I%20want%20to%20book%20an%20appointment%20at%20Alankrita%20Sarees"
+   target="_blank">
+   Book Appointment
+</a>
+
+  <!-- =======================
+       OUR STORY
+       ======================= -->
+  <section id="story" class="section">
+    <h2 class="section-title">Our Story</h2>
+    <p class="section-subtitle">
+      Rooted in heritage. Inspired by elegance.
+    </p>
+    <p>
+      At Alankrita, every saree is handpicked to reflect grace, tradition, and artistry.
+      Our collections celebrate India’s weaving heritage through rich textures, timeless colours,
+      and intricate craftsmanship.
+    </p>
+  </section>
+
+  <!-- =======================
+       CONTACT
+       ======================= -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-subtitle">We're just a call away.</p>
+
+    <p><strong>Phone:</strong> 8412845177</p>
+    <p><strong>Email:</strong> alankritasari01@gmail.com</p>
+  </section>
+
+  <footer style="text-align:center; padding:20px; color:#777;">
+    © Alankrita Sarees
+  </footer>
+
+  <!-- SCRIPT WILL BE PASTED IN PART 2 & PART 3 -->
+  <script>
+const sarees = [
+
+  /* ========== SAREE 1 ========== */
+  {
+    id: 1,
+    title: "Pure Silk Tissue Brocade – Orange",
+    category: "Pure Silk Tissue Brocade",
+    price: "₹19,500",
+    description:
+      "Crafted in pure silk tissue, this brocade saree gleams with fine zari work. Its subtle shimmer and regal texture make it a timeless statement piece.",
+    mainImage: "https://i.ibb.co/tp6dWvTS/Whats-App-Image-2025-12-11-at-7-27-29-PM.jpg",
+    variants: [
+      {
+        colour: "Orange",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/tp6dWvTS/Whats-App-Image-2025-12-11-at-7-27-29-PM.jpg",
+          "https://i.ibb.co/B28Jmr3Y/Whats-App-Image-2025-12-11-at-7-27-28-PM.jpg",
+          "https://i.ibb.co/hR1dLVMQ/Whats-App-Image-2025-12-11-at-7-27-27-PM-1.jpg",
+          "https://i.ibb.co/dsztNBSQ/Whats-App-Image-2025-12-11-at-7-27-27-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 2 ========== */
+  {
+    id: 2,
+    title: "Pure Silk Tissue Brocade – Lavender & Silver",
+    category: "Pure Silk Tissue Brocade",
+    price: "₹19,500",
+    description:
+      "Pure silk tissue with elegant shimmer and all-over zari work, offering sophistication and grace.",
+    mainImage: "https://i.ibb.co/zW965FBt/Whats-App-Image-2025-12-11-at-7-25-14-PM-3.jpg",
+    variants: [
+      {
+        colour: "Lavender & Silver",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/zW965FBt/Whats-App-Image-2025-12-11-at-7-25-14-PM-3.jpg",
+          "https://i.ibb.co/4x9933k/Whats-App-Image-2025-12-11-at-7-25-14-PM-2.jpg",
+          "https://i.ibb.co/LXYXMsTR/Whats-App-Image-2025-12-11-at-7-25-13-PM-2.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 3 ========== */
+  {
+    id: 3,
+    title: "Powerloom Tissue – Pastel Orange with Green Border",
+    category: "Powerloom Tissue",
+    price: "₹8,500",
+    description:
+      "Soft pastel tissue saree with a bold Kanjeevaram border — lightweight, elegant, and vibrant.",
+    mainImage: "https://i.ibb.co/7dFC904d/Whats-App-Image-2025-12-11-at-7-24-25-PM.jpg",
+    variants: [
+      {
+        colour: "Pastel Orange with Green Border",
+        blouse: "Contrast Green",
+        images: [
+          "https://i.ibb.co/7dFC904d/Whats-App-Image-2025-12-11-at-7-24-25-PM.jpg",
+          "https://i.ibb.co/XZMDPSc3/Whats-App-Image-2025-12-11-at-7-24-27-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 4 ========== */
+  {
+    id: 4,
+    title: "Powerloom Tissue – Biscuit with Purple Border",
+    category: "Powerloom Tissue",
+    price: "₹8,500",
+    description:
+      "Lightweight tissue saree with a striking contrast Kanjeevaram border — perfect blend of subtlety and richness.",
+    mainImage: "https://i.ibb.co/jkQ6Th96/Whats-App-Image-2025-12-11-at-7-23-47-PM-1.jpg",
+    variants: [
+      {
+        colour: "Biscuit with Purple Border",
+        blouse: "Contrast Purple",
+        images: [
+          "https://i.ibb.co/jkQ6Th96/Whats-App-Image-2025-12-11-at-7-23-47-PM-1.jpg",
+          "https://i.ibb.co/kgygRCk9/Whats-App-Image-2025-12-11-at-7-23-47-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 5 ========== */
+  {
+    id: 5,
+    title: "Pure Silk Tissue – Light Violet",
+    category: "Pure Silk Tissue",
+    price: "₹11,000",
+    description:
+      "Woven in pure silk tissue with soft gold zari and intricate animal–bird motifs symbolizing prosperity.",
+    mainImage: "https://i.ibb.co/6JbHpGGt/Whats-App-Image-2025-12-11-at-7-22-32-PM.jpg",
+    variants: [
+      {
+        colour: "Light Violet",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/6JbHpGGt/Whats-App-Image-2025-12-11-at-7-22-32-PM.jpg",
+          "https://i.ibb.co/VW3tNN2P/Whats-App-Image-2025-12-11-at-7-22-33-PM.jpg",
+          "https://i.ibb.co/7tFfc4YF/Whats-App-Image-2025-12-11-at-7-22-34-PM-1.jpg",
+          "https://i.ibb.co/Kx0CR28h/Whats-App-Image-2025-12-11-at-7-22-34-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 6 ========== */
+  {
+    id: 6,
+    title: "Pastel Kanjeevaram – Light Blue",
+    category: "Pastel Kanjeevaram",
+    price: "₹17,300",
+    description:
+      "Features delicate swan motifs and soft silver zari for a serene, sophisticated festive look.",
+    mainImage: "https://i.ibb.co/WWx4SC9W/Whats-App-Image-2025-12-11-at-7-20-33-PM.jpg",
+    variants: [
+      {
+        colour: "Light Blue",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/WWx4SC9W/Whats-App-Image-2025-12-11-at-7-20-33-PM.jpg",
+          "https://i.ibb.co/nsSrP35w/Whats-App-Image-2025-12-11-at-7-20-34-PM-1.jpg",
+          "https://i.ibb.co/wFdvW6HM/Whats-App-Image-2025-12-11-at-7-20-34-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 7 ========== */
+  {
+    id: 7,
+    title: "Pure Silk Upada Brocade – Deep Green",
+    category: "Pure Silk Upada Brocade",
+    price: "₹12,250",
+    description:
+      "Rich pure silk Upada with heavy zari brocade weaving, luxurious drape, and grand festive appeal.",
+    mainImage: "https://i.ibb.co/FkLNm07X/Whats-App-Image-2025-12-11-at-7-19-31-PM-2.jpg",
+    variants: [
+      {
+        colour: "Deep Green",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/FkLNm07X/Whats-App-Image-2025-12-11-at-7-19-31-PM-2.jpg",
+          "https://i.ibb.co/5h7CrdJD/Whats-App-Image-2025-12-11-at-7-19-32-PM-3.jpg",
+          "https://i.ibb.co/0ptqhSVc/Whats-App-Image-2025-12-11-at-7-19-32-PM-4.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 8 ========== */
+  {
+    id: 8,
+    title: "Kanjeevaram Broad Border – Royal Green",
+    category: "Kanjeevaram Broad Border",
+    price: "₹19,000",
+    description:
+      "Inspired by royal Rajasthani architecture — broad borders, delicate buttas, and rich craftsmanship.",
+    mainImage: "https://i.ibb.co/G45jc0wC/Whats-App-Image-2025-12-11-at-7-18-06-PM.jpg",
+    variants: [
+      {
+        colour: "Royal Green",
+        blouse: "Contrast Pink",
+        images: [
+          "https://i.ibb.co/G45jc0wC/Whats-App-Image-2025-12-11-at-7-18-06-PM.jpg",
+          "https://i.ibb.co/r2qJ7TxN/Whats-App-Image-2025-12-11-at-7-18-34-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 9 ========== */
+  {
+    id: 9,
+    title: "Kanjeevaram Broad Border – Peacock Green",
+    category: "Kanjeevaram Broad Border",
+    price: "₹19,000",
+    description:
+      "Same luxurious weaving style as Saree 8 — heritage richness and bold borders.",
+    mainImage: "https://i.ibb.co/SwdQ1Zhv/Whats-App-Image-2025-12-11-at-7-15-15-PM-1.jpg",
+    variants: [
+      {
+        colour: "Peacock Green",
+        blouse: "Contrast Pink",
+        images: [
+          "https://i.ibb.co/SwdQ1Zhv/Whats-App-Image-2025-12-11-at-7-15-15-PM-1.jpg",
+          "https://i.ibb.co/0y2NDx3w/Whats-App-Image-2025-12-11-at-7-15-15-PM.jpg",
+          "https://i.ibb.co/wNbmHWdk/Whats-App-Image-2025-12-11-at-7-15-16-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 10 ========== */
+  {
+    id: 10,
+    title: "Meenakari Kanjeevaram – Pink",
+    category: "Meenakari Kanjeevaram",
+    price: "₹22,000",
+    description:
+      "Intricately designed meenakari borders and pallu — rare artistry and timeless elegance.",
+    mainImage: "https://i.ibb.co/G35vGL6x/Whats-App-Image-2025-12-11-at-7-15-15-PM-3.jpg",
+    variants: [
+      {
+        colour: "Pink",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/G35vGL6x/Whats-App-Image-2025-12-11-at-7-15-15-PM-3.jpg",
+          "https://i.ibb.co/B29DBvCQ/Whats-App-Image-2025-12-11-at-7-15-15-PM-2.jpg",
+          "https://i.ibb.co/QvVZ0yMp/Whats-App-Image-2025-12-11-at-7-15-01-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 11 ========== */
+  {
+    id: 11,
+    title: "Banarasi Tissue – Grey",
+    category: "Banarasi Tissue",
+    price: "₹20,000",
+    description:
+      "All-over jal design in mixed silver–gold zari for a radiant, dual-tone shimmer.",
+    mainImage: "https://i.ibb.co/6Ry6nX5k/Whats-App-Image-2025-12-11-at-7-14-17-PM-1.jpg",
+    variants: [
+      {
+        colour: "Grey",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/6Ry6nX5k/Whats-App-Image-2025-12-11-at-7-14-17-PM-1.jpg",
+          "https://i.ibb.co/9kYXPhLY/Whats-App-Image-2025-12-11-at-7-14-17-PM.jpg",
+          "https://i.ibb.co/My749cmb/Whats-App-Image-2025-12-11-at-7-14-16-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 12 ========== */
+  {
+    id: 12,
+    title: "Royal Tissue – Golden with Pink Border",
+    category: "Royal Tissue",
+    price: "₹23,000",
+    description:
+      "Rare blend of silver, gold, and bronze zari — a regal, glowing tissue classic.",
+    mainImage: "https://i.ibb.co/nq6PyVHn/Whats-App-Image-2025-12-11-at-7-13-23-PM-1.jpg",
+    variants: [
+      {
+        colour: "Golden with Pink Border",
+        blouse: "Contrast Pink",
+        images: [
+          "https://i.ibb.co/nq6PyVHn/Whats-App-Image-2025-12-11-at-7-13-23-PM-1.jpg",
+          "https://i.ibb.co/0pHSwQtp/Whats-App-Image-2025-12-11-at-7-13-23-PM.jpg",
+          "https://i.ibb.co/gFTXCV8Y/Whats-App-Image-2025-12-11-at-7-13-48-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 13 ========== */
+  {
+    id: 13,
+    title: "Banarasi Kora Silk – Olive Green",
+    category: "Banarasi Kora Silk",
+    price: "₹13,000",
+    description:
+      "Pure silk kora with bronze zari weave — simple, elegant, and graceful.",
+    mainImage: "https://i.ibb.co/1Ympxsvf/Whats-App-Image-2025-12-11-at-7-12-25-PM.jpg",
+    variants: [
+      {
+        colour: "Olive Green",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/1Ympxsvf/Whats-App-Image-2025-12-11-at-7-12-25-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 14 ========== */
+  {
+    id: 14,
+    title: "Tissue Brocade – Pastel Green",
+    category: "Tissue Brocade",
+    price: "₹19,500",
+    description:
+      "Green tissue with delicate brocade, vel butti, and soft silver zari.",
+    mainImage: "https://i.ibb.co/B0mrFNw/Whats-App-Image-2025-12-11-at-7-12-24-PM.jpg",
+    variants: [
+      {
+        colour: "Pastel Green",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/B0mrFNw/Whats-App-Image-2025-12-11-at-7-12-24-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 15 ========== */
+  {
+    id: 15,
+    title: "Pure Silk Tissue with Lotus Butta – Light Green",
+    category: "Pure Silk Tissue with Lotus Butta",
+    price: "₹15,000",
+    description:
+      "Tissue interwoven with lotus buttas in meenakari — gentle shimmer with gold zari.",
+    mainImage: "https://i.ibb.co/GQBvZSCQ/Whats-App-Image-2025-12-11-at-7-11-21-PM.jpg",
+    variants: [
+      {
+        colour: "Light Green",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/GQBvZSCQ/Whats-App-Image-2025-12-11-at-7-11-21-PM.jpg",
+          "https://i.ibb.co/KjSf9vMV/Whats-App-Image-2025-12-11-at-7-11-22-PM-1.jpg",
+          "https://i.ibb.co/Pb0B3q3/Whats-App-Image-2025-12-11-at-7-11-22-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 16 ========== */
+  {
+    id: 16,
+    title: "Pure Silk Tissue with Lotus Butta – Golden Brown",
+    category: "Pure Silk Tissue with Lotus Butta",
+    price: "₹15,000",
+    description:
+      "Same premium weaving — stunning lotus motifs and soft golden tissue glow.",
+    mainImage: "https://i.ibb.co/tT9GKs6N/Whats-App-Image-2025-12-11-at-7-10-26-PM.jpg",
+    variants: [
+      {
+        colour: "Golden Brown",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/tT9GKs6N/Whats-App-Image-2025-12-11-at-7-10-26-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 17 ========== */
+  {
+    id: 17,
+    title: "Pure Silk Brocade Kanjeevaram – Teal Blue",
+    category: "Pure Silk Brocade Kanjeevaram",
+    price: "₹21,000",
+    description:
+      "Royal brocade with geometric zari motifs in luminous gold — elegant & timeless.",
+    mainImage: "https://i.ibb.co/d4jZtf95/Whats-App-Image-2025-12-11-at-7-09-13-PM.jpg",
+    variants: [
+      {
+        colour: "Teal Blue",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/d4jZtf95/Whats-App-Image-2025-12-11-at-7-09-13-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 18 ========== */
+  {
+    id: 18,
+    title: "Pure Silk Brocade Kanjeevaram – Yellow-Pink Dual Shade",
+    category: "Pure Silk Brocade Kanjeevaram",
+    price: "₹21,000",
+    description:
+      "Radiant dual-tone with bold brocade motifs — a true festive masterpiece.",
+    mainImage: "https://i.ibb.co/mCJPhY2R/Whats-App-Image-2025-12-11-at-7-07-59-PM-2.jpg",
+    variants: [
+      {
+        colour: "Yellow–Pink Dual Shade",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/mCJPhY2R/Whats-App-Image-2025-12-11-at-7-07-59-PM-2.jpg",
+          "https://i.ibb.co/6Rqzddps/Whats-App-Image-2025-12-11-at-7-07-59-PM-1.jpg",
+          "https://i.ibb.co/YT1PWnSH/Whats-App-Image-2025-12-11-at-7-07-59-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 19 ========== */
+  {
+    id: 19,
+    title: "Golden Tissue – Gold",
+    category: "Golden Tissue",
+    price: "₹19,500",
+    description:
+      "Golden–silver tissue blend with delicate rose motifs for soft feminine charm.",
+    mainImage: "https://i.ibb.co/Ld8V6wvd/Whats-App-Image-2025-12-11-at-7-07-32-PM.jpg",
+    variants: [
+      {
+        colour: "Gold",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/Ld8V6wvd/Whats-App-Image-2025-12-11-at-7-07-32-PM.jpg",
+          "https://i.ibb.co/sxf0vzW/Whats-App-Image-2025-12-11-at-7-07-33-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 20 ========== */
+  {
+    id: 20,
+    title: "Pastel Brocade Kanjeevaram – Ivory",
+    category: "Pastel Brocade Kanjeevaram",
+    price: "₹19,500",
+    description:
+      "Pastel ivory beauty with silver bird patterns — serene, lightweight elegance.",
+    mainImage: "https://i.ibb.co/4g2m2vJ7/Whats-App-Image-2025-12-11-at-7-06-47-PM-2.jpg",
+    variants: [
+      {
+        colour: "Ivory",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/4g2m2vJ7/Whats-App-Image-2025-12-11-at-7-06-47-PM-2.jpg",
+          "https://i.ibb.co/bMkJd3V1/Whats-App-Image-2025-12-11-at-7-06-47-PM-1.jpg",
+          "https://i.ibb.co/0yP0ZzvJ/Whats-App-Image-2025-12-11-at-7-06-47-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 21 ========== */
+  {
+    id: 21,
+    title: "Meenakari Kanjeevaram – Light Green & Light Blue",
+    category: "Meenakari Kanjeevaram",
+    price: "₹22,000",
+    description:
+      "Meenakari borders and intricate pallu weaving — luxurious colour tone.",
+    mainImage: "https://i.ibb.co/h1tCy5fZ/Whats-App-Image-2025-12-11-at-7-01-44-PM-2.jpg",
+    variants: [
+      {
+        colour: "Light Green & Light Blue",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/h1tCy5fZ/Whats-App-Image-2025-12-11-at-7-01-44-PM-2.jpg",
+          "https://i.ibb.co/jktb4xSY/Whats-App-Image-2025-12-11-at-7-01-44-PM-1.jpg",
+          "https://i.ibb.co/TxzrPp0J/Whats-App-Image-2025-12-11-at-7-01-44-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 22 ========== */
+  {
+    id: 22,
+    title: "Meenakari Kanjeevaram – Violet",
+    category: "Meenakari Kanjeevaram",
+    price: "₹22,000",
+    description:
+      "Rich violet body with uniquely designed meenakari borders.",
+    mainImage: "https://i.ibb.co/dwFVK1My/Whats-App-Image-2025-12-11-at-7-01-17-PM.jpg",
+    variants: [
+      {
+        colour: "Violet",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/dwFVK1My/Whats-App-Image-2025-12-11-at-7-01-17-PM.jpg",
+          "https://i.ibb.co/4nWzWDk0/Whats-App-Image-2025-12-11-at-7-01-16-PM-1.jpg",
+          "https://i.ibb.co/vxsd7y2j/Whats-App-Image-2025-12-11-at-7-01-16-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 23 ========== */
+  {
+    id: 23,
+    title: "Pastel Brocade Kanjeevaram – Pastel Pink",
+    category: "Pastel Brocade Kanjeevaram",
+    price: "₹21,500",
+    description:
+      "All-over golden brocade with a vibrant yellow blouse — soft yet striking.",
+    mainImage: "https://i.ibb.co/W4jkq3KT/Whats-App-Image-2025-12-11-at-7-00-41-PM-2.jpg",
+    variants: [
+      {
+        colour: "Pastel Pink",
+        blouse: "Yellow",
+        images: [
+          "https://i.ibb.co/W4jkq3KT/Whats-App-Image-2025-12-11-at-7-00-41-PM-2.jpg",
+          "https://i.ibb.co/Z1V2rfrG/Whats-App-Image-2025-12-11-at-7-00-41-PM-1.jpg",
+          "https://i.ibb.co/qYytw5nV/Whats-App-Image-2025-12-11-at-7-00-41-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 24 ========== */
+  {
+    id: 24,
+    title: "Pure Silk Upada Brocade – Blue",
+    category: "Pure Silk Upada Brocade",
+    price: "₹12,250",
+    description:
+      "Blue Upada brocade rich with floral buttas and golden zari.",
+    mainImage: "https://i.ibb.co/cStjsJnb/Whats-App-Image-2025-12-11-at-7-00-09-PM-1.jpg",
+    variants: [
+      {
+        colour: "Blue",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/cStjsJnb/Whats-App-Image-2025-12-11-at-7-00-09-PM-1.jpg",
+          "https://i.ibb.co/kVPfKKrt/Whats-App-Image-2025-12-11-at-7-00-09-PM.jpg",
+          "https://i.ibb.co/4wn2qD65/Whats-App-Image-2025-12-11-at-7-00-10-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 25 ========== */
+  {
+    id: 25,
+    title: "Pure Silk Upada Brocade – Deep Violet with Magenta Border",
+    category: "Pure Silk Upada Brocade",
+    price: "₹13,250",
+    description:
+      "Upada silk with heavy zari work and elegant contrast border.",
+    mainImage: "https://i.ibb.co/VYrJGt9x/Whats-App-Image-2025-12-11-at-6-59-23-PM-1.jpg",
+    variants: [
+      {
+        colour: "Deep Violet + Magenta Border",
+        blouse: "Magenta",
+        images: [
+          "https://i.ibb.co/VYrJGt9x/Whats-App-Image-2025-12-11-at-6-59-23-PM-1.jpg",
+          "https://i.ibb.co/cKrN2P1s/Whats-App-Image-2025-12-11-at-6-59-23-PM.jpg",
+          "https://i.ibb.co/N67v5L1D/Whats-App-Image-2025-12-11-at-6-59-24-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 26 ========== */
+  {
+    id: 26,
+    title: "Fancy Kanjeevaram – Light Pink with Dark Pink Border",
+    category: "Fancy Kanjeevaram",
+    price: "₹23,000",
+    description:
+      "Fancy Kanjeevaram with intricate brocade and deep pink border–pallu.",
+    mainImage: "https://i.ibb.co/ZRX1y30d/Whats-App-Image-2025-12-11-at-6-58-55-PM-2.jpg",
+    variants: [
+      {
+        colour: "Light Pink + Dark Pink Border",
+        blouse: "Dark Pink",
+        images: [
+          "https://i.ibb.co/ZRX1y30d/Whats-App-Image-2025-12-11-at-6-58-55-PM-2.jpg",
+          "https://i.ibb.co/QGktywR/Whats-App-Image-2025-12-11-at-6-58-55-PM-1.jpg",
+          "https://i.ibb.co/F4WttMZN/Whats-App-Image-2025-12-11-at-6-58-55-PM.jpg"
+        ]
+      }
+    ]
+  },
+
+  /* ========== SAREE 27 ========== */
+  {
+    id: 27,
+    title: "Brocade Tissue – Peach",
+    category: "Brocade Tissue",
+    price: "₹20,000",
+    description:
+      "Lightweight peach tissue with full brocade design — perfect for elegant day events.",
+    mainImage: "https://i.ibb.co/mCm48dwr/Whats-App-Image-2025-12-11-at-6-58-07-PM-1.jpg",
+    variants: [
+      {
+        colour: "Peach",
+        blouse: "Self",
+        images: [
+          "https://i.ibb.co/mCm48dwr/Whats-App-Image-2025-12-11-at-6-58-07-PM-1.jpg",
+          "https://i.ibb.co/JFpKqJ3J/Whats-App-Image-2025-12-11-at-6-58-07-PM.jpg",
+          "https://i.ibb.co/PGZxrQTs/Whats-App-Image-2025-12-11-at-6-58-08-PM.jpg"
+        ]
+      }
+    ]
+  }
+
+]; /* END OF DATABASE */
+/* =============================
+   LOAD COLLECTION GRID
+   =============================*/
+const grid = document.getElementById("collectionGrid");
+const productView = document.getElementById("productView");
+const collectionSection = document.getElementById("collectionSection");
+
+function loadCollection() {
+  grid.innerHTML = "";
+
+  sarees.forEach((s) => {
+    const card = document.createElement("div");
+    card.className = "saree-card";
+    card.onclick = () => openProduct(s.id);
+
+    card.innerHTML = `
+      <div class="saree-thumb">
+        <img src="${s.mainImage}">
+      </div>
+      <div class="saree-info">
+        <h3>${s.title}</h3>
+        <div class="price">${s.price}</div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+loadCollection();
+/* =============================
+   PRICE FILTER
+   =============================*/
+document.getElementById("priceFilter").addEventListener("change", function () {
+  let value = this.value;
+
+  if (value === "low") {
+    sarees.sort((a, b) =>
+      Number(a.price.replace(/[^0-9]/g, "")) -
+      Number(b.price.replace(/[^0-9]/g, ""))
+    );
+  } else if (value === "high") {
+    sarees.sort((a, b) =>
+      Number(b.price.replace(/[^0-9]/g, "")) -
+      Number(a.price.replace(/[^0-9]/g, ""))
+    );
+  } else {
+    sarees.sort((a, b) => a.id - b.id); // default order
+  }
+
+  loadCollection(); // reload UI
+});
+
+
+
+/* =============================
+   OPEN PRODUCT VIEW
+   =============================*/
+function openProduct(id) {
+  const s = sarees.find((x) => x.id === id);
+
+  // Hide collection, show product view
+  collectionSection.style.display = "none";
+  productView.style.display = "block";
+
+  // Scroll directly to product view (no jumping to home)
+  setTimeout(() => {
+    productView.scrollIntoView({ behavior: "smooth" });
+  }, 50);
+
+  // Main image
+  document.getElementById("mainImage").src = s.mainImage;
+
+  // Title & price
+  document.getElementById("pTitle").innerText = s.title;
+  document.getElementById("pPrice").innerText = s.price;
+  document.getElementById("pDesc").innerText = s.description;
+
+  // Variant details
+  const v = s.variants[0];
+  document.getElementById("pVariants").innerHTML = `
+    <li><strong>Colour:</strong> ${v.colour}</li>
+    <li><strong>Blouse:</strong> ${v.blouse}</li>
+  `;
+
+  // Thumbnail images
+  const thumbBox = document.getElementById("thumbContainer");
+  thumbBox.innerHTML = "";
+  v.images.forEach((img) => {
+    const t = document.createElement("img");
+    t.src = img;
+    t.onclick = () => (document.getElementById("mainImage").src = img);
+    thumbBox.appendChild(t);
+  });
+
+  // WhatsApp Buy Now
+  document.getElementById("buyBtn").onclick = () => {
+    const msg = `Hello! I am interested in:\n${s.title}\nPrice: ${s.price}`;
+    const url = `https://wa.me/918412845177?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+  };
+}
+
+
+
+
+/* =============================
+   CLOSE PRODUCT VIEW
+   =============================*/
+function closeProduct() {
+  productView.style.display = "none";
+  collectionSection.style.display = "block";
+  window.location.href = "#collectionSection";
+}
+
+
+
+/* =============================
+   MOBILE MENU TOGGLE
+   =============================*/
+document.querySelector(".menu-toggle").onclick = () =>
+  document.querySelector(".nav-links").classList.toggle("active");
+</script>
+    
+  </body>
+  
+</html>
